@@ -47,7 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: DrawerHeader(child: Text("@"),)),
           Expanded(
             flex: 1,
-                      child: ListView(
+              child: ListView(
+              shrinkWrap: true,
               children: [
                 Text("sample1"),
                 Text("sample2"),
