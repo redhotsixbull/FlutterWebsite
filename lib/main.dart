@@ -11,12 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
- 
-        primarySwatch: Colors.blue,
-
+        primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: '플러터 샘플 웹'),
     );
   }
 }
@@ -35,11 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
@@ -47,6 +40,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: new Drawer(
+        child: Column(children: [
+          Expanded(
+            flex: 1,
+            child: DrawerHeader(child: Text("@"),)),
+          Expanded(
+            flex: 1,
+                      child: ListView(
+              children: [
+                Text("sample1"),
+                Text("sample2"),
+                Text("sample3"),
+                Text("sample4"),
+                Text("sample"),
+              ],
+              ),
+          )
+        ],),
+      ),
       appBar: AppBar(
         title: Text(widget.title),
       ),
